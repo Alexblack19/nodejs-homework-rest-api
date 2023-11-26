@@ -4,16 +4,16 @@ const path = require("path");
 const contactsPath = path.join(__dirname, "contacts.json");
 
 const listContacts = async () => {
-  console.log("Hello function")
-  try {
-    const data = await fs.readFile(contactsPath);
-    return JSON.parse(data);
-  } catch (error) {
-    console.log(error);
-  }
+  const data = await fs.readFile(contactsPath);
+  return JSON.parse(data);
 };
 
-const getContactById = async (contactId) => {};
+const getContactById = async (contactId) => {
+  console.log("HELLO")
+  const contacts = await listContacts();
+  const result = contacts.find((item) => item.id === contactId);
+  return result || null;
+};
 
 const removeContact = async (contactId) => {};
 
