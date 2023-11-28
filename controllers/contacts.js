@@ -16,12 +16,12 @@ const addSchema = Joi.object({
   }),
 });
 
-const listContacts = async (req, res, next) => {
+const listContacts = async (req, res) => {
   const result = await contacts.listContacts();
   res.json(result);
 };
 
-const getContactById = async (req, res, next) => {
+const getContactById = async (req, res) => {
   const { id } = req.params;
   const result = await contacts.getContactById(id);
   if (!result) {
@@ -30,7 +30,7 @@ const getContactById = async (req, res, next) => {
   res.json(result);
 };
 
-const addContact = async (req, res, next) => {
+const addContact = async (req, res) => {
   const { error } = await addSchema.validate(req.body);
   if (error) {
     throw HttpError(400, error.message);
@@ -39,7 +39,7 @@ const addContact = async (req, res, next) => {
   res.status(201).json(result);
 };
 
-const removeContact = async (req, res, next) => {
+const removeContact = async (req, res) => {
   const { id } = req.params;
   const result = await contacts.removeContact(id);
   if (!result) {
@@ -48,7 +48,7 @@ const removeContact = async (req, res, next) => {
   res.json({ message: "contact deleted" });
 };
 
-const updateContactById = async (req, res, next) => {
+const updateContactById = async (req, res) => {
   const { error } = await addSchema.validate(req.body);
   if (error) {
     throw HttpError(400, error.message);
