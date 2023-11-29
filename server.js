@@ -10,7 +10,7 @@ mongoose
     app.listen(PORT);
     console.log("Database connection successful");
   })
-  .catch((error) => {
+  .catch(error => {
     console.log(error.message);
     process.exit(1);
   });
