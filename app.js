@@ -1,6 +1,7 @@
 const express = require("express");
 const logger = require("morgan");
 const cors = require("cors");
+require("dotenv").config(); // метод config шукає в проекті файл <.env> (текстовий файл), читає його построково та додає в process.env змінні оточення DB_HOST та PORT (у вигляді ключ-значення)
 
 const contactsRouter = require("./routes/api/contacts");
 
