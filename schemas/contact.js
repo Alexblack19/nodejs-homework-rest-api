@@ -21,7 +21,3 @@ module.exports = {
   bodySchema,
   updateFavoriteSchema,
 };
-
-
-
-
