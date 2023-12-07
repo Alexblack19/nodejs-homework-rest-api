@@ -1,4 +1,4 @@
-const { ctrlWrapper } = require("../helpers");
+const { ctrlWrapper } = require("../../helpers");
 const listContacts = require("./listContacts");
 const getContactById = require("./getContactById");
 const addContact = require("./addContact");

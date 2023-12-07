@@ -29,3 +29,8 @@
 - `npm run start:dev` &mdash; старт сервера в режимі розробки (development)
 - `npm run lint` &mdash; запустити виконання перевірки коду з eslint, необхідно виконувати перед кожним PR та виправляти всі помилки лінтера
 - `npm lint:fix` &mdash; та ж перевірка лінтера, але з автоматичними виправленнями простих помилок
+
+### Інформація від ментора в Slack
+
+`Тестування домашки hw02-express до її здачі на перевірку: https://www.loom.com/share/c5ec69bdb62e40018cd4551ebe6fdda3`
+`Тестування домашки 04-auth до її здачі на перевірку: https://www.loom.com/share/8689d7494f5b4bc993139c37d583ed80?start-embed-anon-signup=true`
