@@ -1,0 +1,43 @@
+const bcryptjs = require("bcryptjs");
+
+const jwt = require("jsonwebtoken");
+
+const { HttpError } = require("../../helpers");
+
+const { SECRET_KEY } = process.env;
+
+const User = require("../../models/user");
+
+const login = async (req, res) => {
+  const { email, password } = req.body;
+
+  const user = await User.findOne({ email });
+  if (!user) {
+    throw HttpError(401, "Email or password is wrong");
+  }
+
+  const passwordCompare = await bcryptjs.compare(password, user.password);
+  if (!passwordCompare) {
+    throw HttpError(401, "Email or password is wrong");
+  }
+
+  const payload = {
+    id: user._id,
+  };
+
+  const token = jwt.sign(payload, SECRET_KEY, { expiresIn: "23h" });
+
+//   const hashPassword = await bcryptjs.hash(password, 10);
+
+//   const newUser = await User.create({ ...req.body, password: hashPassword });
+
+  res.status(200).json({
+    token,
+    // user: {
+    //   email: newUser.email,
+    //   subscription: newUser.subscription,
+    // },
+  });
+};
+
+module.exports = login;
