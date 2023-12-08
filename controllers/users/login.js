@@ -27,16 +27,12 @@ const login = async (req, res) => {
 
   const token = jwt.sign(payload, SECRET_KEY, { expiresIn: "23h" });
 
-//   const hashPassword = await bcryptjs.hash(password, 10);
-
-//   const newUser = await User.create({ ...req.body, password: hashPassword });
-
   res.status(200).json({
     token,
-    // user: {
-    //   email: newUser.email,
-    //   subscription: newUser.subscription,
-    // },
+    user: {
+      email: user.email,
+      subscription: user.subscription,
+    },
   });
 };
 
