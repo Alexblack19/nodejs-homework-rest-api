@@ -3,6 +3,7 @@ const logger = require("morgan");
 const cors = require("cors");
 require("dotenv").config(); // метод config шукає в проекті файл <.env> (текстовий файл), читає його построково та додає в process.env змінні оточення DB_HOST та PORT (у вигляді ключ-значення)
 
+const authRouter = require("./routes/api/users");
 const contactsRouter = require("./routes/api/contacts");
 
 const app = express(); // app - веб-сервер
@@ -13,6 +14,7 @@ app.use(logger(formatsLogger));
 app.use(cors());
 app.use(express.json());
 
+app.use("/users", authRouter);
 app.use("/api/contacts", contactsRouter);
 
 app.use((req, res) => {
