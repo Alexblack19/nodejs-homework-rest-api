@@ -1,9 +1,6 @@
 const bcryptjs = require("bcryptjs");
-
 const { HttpError } = require("../../helpers");
-
 const User = require("../../models/user");
-
 const gravatar = require("gravatar"); // пакет для створення тимчасової аватарки
 
 const register = async (req, res) => {
