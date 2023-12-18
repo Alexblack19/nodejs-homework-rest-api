@@ -10,7 +10,7 @@ const updateAvatar = async (req, res) => {
   const { _id } = req.user;
 
   if (!req.file) {
-    throw HttpError(400, "No file");
+    throw HttpError(400, "File is missing");
   }
 
   const { path: tempUpload, originalname } = req.file;
