@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@colors/colors": "^1.6.0",
+    "@elasticemail/elasticemail-client": "^4.0.23",
     "bcryptjs": "^2.4.3",
     "cors": "2.8.5",
     "cross-env": "7.0.3",
