@@ -28,7 +28,7 @@ const sendEmail = data => {
 
   const callback = function (error, data, response) {
     if (error) {
-      console.error(error);
+      console.error(error.message);
     } else {
       console.log("API called successfully.");
     }
