@@ -1,7 +1,8 @@
 const Joi = require("joi");
+const emailRegexp = require("../constants/emailRegexp");
 
 const registerSchema = Joi.object({
-  email: Joi.string().required().messages({
+  email: Joi.string().pattern(emailRegexp).required().messages({
     "any.required": "Missing required email field",
   }),
 
@@ -13,8 +14,14 @@ const registerSchema = Joi.object({
   token: Joi.string(),
 });
 
+const emailSchema = Joi.object({
+  email: Joi.string().pattern(emailRegexp).required().messages({
+    "any.required": "Missing required field email",
+  }),
+});
+
 const loginSchema = Joi.object({
-  email: Joi.string().required().messages({
+  email: Joi.string().pattern(emailRegexp).required().messages({
     "any.required": "Missing required email field",
   }),
   password: Joi.string().required().messages({
@@ -24,5 +31,6 @@ const loginSchema = Joi.object({
 
 module.exports = {
   registerSchema,
+  emailSchema,
   loginSchema,
 };
