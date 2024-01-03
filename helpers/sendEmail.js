@@ -1,3 +1,5 @@
+// https://elasticemail.com/developers/api-libraries/javascript#quick-start-guide-send-your-first-email-with-api
+
 const ElasticEmail = require("@elasticemail/elasticemail-client");
 
 require("dotenv").config(); // метод config шукає в проекті файл <.env> (текстовий файл), читає його построково та додає в process.env змінні оточення DB_HOST та PORT (у вигляді ключ-значення)
