@@ -1,4 +1,4 @@
-const Joi = require("joi"); // Joi перевіряє дані, які приходять з бази даних. Перевіряє те що прийшло
+const Joi = require("joi"); // Joi перевіряє дані, які приходять з frontend
 
 const bodySchema = Joi.object({
   name: Joi.string().required().messages({

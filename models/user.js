@@ -1,4 +1,4 @@
-const { Schema, model } = require("mongoose");
+const { Schema, model } = require("mongoose"); // Mongoose перевіряє дані, які зберігаємо в базі даних. Перевіряє те, що ми хочемо зберегти
 
 const { handleMongooseError } = require("../helpers");
 

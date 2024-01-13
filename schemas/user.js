@@ -1,4 +1,4 @@
-const Joi = require("joi");
+const Joi = require("joi"); // Joi перевіряє дані, які приходять з frontend
 const emailRegexp = require("../constants/emailRegexp");
 
 const registerSchema = Joi.object({
